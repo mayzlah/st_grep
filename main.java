@@ -5,7 +5,7 @@ public class Grep{
         String source = new String("source.txt");
         int argLength = args.length;
         if (argLength == 0){
-            System.out.println("Need more arguments");
+            System.err.println("Need more arguments");
             System.exit(1);
         }
         int argCounter = 0;
@@ -22,7 +22,7 @@ public class Grep{
             }
         }
         if (patCounter == 0){
-            System.out.println("Need patterns");
+            System.err.println("Need patterns");
             System.exit(1);
         }
         SourceFile sFile;
