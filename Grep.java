@@ -25,10 +25,12 @@ public class Grep{
             System.err.println("Need patterns");
             System.exit(1);
         }
+        System.out.println("Preparing complite! Initiating source file stream.");
         SourceFile sFile = new SourceFile();
         if(!sFile.openFile(source)) {
             System.exit(1);
         }
+        System.out.println("Initiating comlite! Starting parsing and comparing.");
         StringComp sComp = new StringComp();
         try {
             sComp.compare(pattern, sFile.getStream());
