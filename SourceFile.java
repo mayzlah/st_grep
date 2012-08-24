@@ -1,7 +1,10 @@
 import java.io.*;
 
 public class SourceFile {
-    private File sFile = new File();
+    public SourceFile() {
+    }
+    
+    private File sFile;
     
     public boolean openFile(String source){
         sFile = new File(source);

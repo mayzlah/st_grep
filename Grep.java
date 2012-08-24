@@ -25,11 +25,16 @@ public class Grep{
             System.err.println("Need patterns");
             System.exit(1);
         }
-        SourceFile sFile;
-        if(!sFile.getFile(source)) {
-            exit(1);
+        SourceFile sFile = new SourceFile();
+        if(!sFile.openFile(source)) {
+            System.exit(1);
         }
-        StringComp sComp;
-        sComp.compare(pattern, sFile.getStream());
+        StringComp sComp = new StringComp();
+        try {
+            sComp.compare(pattern, sFile.getStream());
+        }
+        catch (Exception e) {
+            System.err.println("Shit happend, nothing to do with it");
+        }
     }
 }
