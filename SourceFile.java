@@ -19,7 +19,7 @@ public class SourceFile {
         return true;
     }
     
-    public BufferedReader getStream() {
+    public BufferedReader getStream() throws FileNotFoundException {
         BufferedReader getStream = new BufferedReader( new FileReader( sFile));
         return getStream;
     }

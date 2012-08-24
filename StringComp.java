@@ -5,7 +5,7 @@ public class StringComp {
     public StringComp() {
     }
 
-    public void compare (CharSequence[] pattern, BufferedReader stream) throws FileNotFoundException {
+    public void compare (CharSequence[] pattern, BufferedReader stream)  {
         int counter;
         try {
             String currentLine = new String(stream.readLine());             //}
@@ -17,8 +17,9 @@ public class StringComp {
                     }                                                       //} Seriously.
                 }                                                           //}
             }                                                               //} I don't even know what to do next
-        }                                                                   //}
+            stream.close();
+        }
         catch (Exception e) {}
-        stream.close();
+        
     }
 }
