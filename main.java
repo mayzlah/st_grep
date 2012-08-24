@@ -1,4 +1,4 @@
-import java.io.*
+import java.io.*;
 
 public class Grep{
     public static void main(String[] args){
@@ -13,7 +13,7 @@ public class Grep{
         CharSequence[] pattern = new CharSequence[argLength];
         for(argCounter = 0; argCounter < argLength; argCounter++){
             if (args[argCounter] == "-s") {
-                sourse = args[argCounter+1];
+                source = args[argCounter+1];
                 argCounter++;
             }
             else {
@@ -26,8 +26,10 @@ public class Grep{
             System.exit(1);
         }
         SourceFile sFile;
-        sFile.getFile(source);
+        if(!sFile.getFile(source)) {
+            exit(1);
+        }
         StringComp sComp;
-        sComp.compare(pattern, sFile.getStrings);
+        sComp.compare(pattern, sFile.getStream());
     }
 }
